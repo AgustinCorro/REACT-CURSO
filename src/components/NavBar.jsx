@@ -27,12 +27,6 @@ const NavBar = () => {
                     <CartWidget />
                 </Box>
             </Flex>
-
-
-
-
-
-
         </div>
     )
 }

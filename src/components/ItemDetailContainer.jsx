@@ -1,9 +1,7 @@
 import React from 'react'
-import ItemList from './ItemList';
-import { Center } from '@chakra-ui/react';
+import ItemDetail from './ItemDetail';
 
-const ItemListContainer = () => {
-
+const ItemDetailContainer = () => {
   const productos = [
     { id: "1", name: "Remera 1", description: "Descripcion de la remera 1", stock: 10, precio: 100, categoria: "Categoria A" },
     { id: "2", name: "Remera 2", description: "Descripcion de la remera 2", stock: 20, precio: 200, categoria: "Categoria A" },
@@ -19,31 +17,29 @@ const ItemListContainer = () => {
   ]
 
   const mostrarProductos = new Promise((resolve, reject) => {
-    if(productos.length > 0) {
-      setTimeout(() =>  {
+    if (productos.length > 0) {
+      setTimeout(() => {
         resolve(productos)
       }, 3000)
-    } else{
+    } else {
       reject("No se encontraron productos")
     }
   });
 
   mostrarProductos
-    .then((resultado) =>{
+    .then((resultado) => {
       console.log(resultado)
     })
     .catch((error) => {
       console.log(error)
     })
-  
+
+
   return (
     <>
-      <Center p="1rem">
-        <ItemList productos={productos}/>
-      </Center>
-
+      <ItemDetail productos={productos} />
     </>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

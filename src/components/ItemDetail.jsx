@@ -1,36 +1,48 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-const Item = ({ name, description, precio, id }) => {
 
-    return (
-        <div>
+const ItemDetail = ({productos}) => {
+
+  const {id} = useParams();
+
+  const filteredProduct = productos.filter((producto) => producto.id === id)
+
+  return (
+    <>
+      {
+        filteredProduct.map((p) =>{
+          return(
             <Card maxW='sm'>
                 <CardBody>
                     <Stack mt='6' spacing='3'>
-                        <Heading size='md'>{name}</Heading>
+                        <Heading size='md'>{p.name}</Heading>
                         <Text>
-                            {description}
+                            {p.description}
                         </Text>
                         <Text color='blue.600' fontSize='2xl'>
-                            ${precio}
+                            ${p.precio}
                         </Text>
                     </Stack>
                 </CardBody>
                 <Divider />
                 <CardFooter>
                     <ButtonGroup spacing='2'>
-                        <Link to={`/product/${id}`}>
+                        <Link>
                             <Button variant='solid' colorScheme='blue'>
-                                Ver detalle
+                                Contador
                             </Button>
                         </Link>
                         
                     </ButtonGroup>
                 </CardFooter>
             </Card>
-        </div>
-    )
+          )
+        })
+      }
+    </>
+  )
 }
 
-export default Item
+export default ItemDetail

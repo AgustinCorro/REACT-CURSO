@@ -12,16 +12,23 @@ const NavBar = () => {
                         <h1>Logo</h1>
                     </Link>
                 </Box>
-                <Spacer/>
+                <Spacer />
                 <Box>
                     <Menu>
                         <MenuButton>
                             Productos
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Remeras</MenuItem>
-                            <MenuItem>Pantalones</MenuItem>
-                            <MenuItem>Abrigos</MenuItem>
+                            <MenuItem>
+                                <Link to={`/categoria/${'CategoriaA'}`}> Remeras </Link>
+                            </MenuItem>
+
+                            <Link to={`/categoria/${'CategoriaB'}`}>
+                                <MenuItem>Pantalones</MenuItem>
+                            </Link>
+                            <Link to={`/categoria/${'CategoriaC'}`}>
+                                <MenuItem>Abrigos</MenuItem>
+                            </Link>
                         </MenuList>
                     </Menu>
                 </Box>

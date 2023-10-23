@@ -46,7 +46,7 @@ const ItemListContainer = () => {
     return (
     <>
       <Center p="1rem">
-        <ItemList productos={filteredProducts}/>
+        {categoria ? <ItemList productos={filteredProducts}/> : <ItemList productos={productos}/>}
       </Center>
     </>
   )

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Card, CardBody, Stack, Heading, Text, Divider} from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({productos}) => {
@@ -15,7 +14,7 @@ const ItemDetail = ({productos}) => {
       {
         filteredProduct.map((p) =>{
           return(
-            <Card maxW='sm'>
+            <Card maxW='sm' key={p.id}>
                 <CardBody>
                     <Stack mt='6' spacing='3'>
                         <Heading size='md'>{p.name}</Heading>

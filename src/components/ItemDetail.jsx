@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import ItemCount from './ItemCount'
 
 const ItemDetail = ({productos}) => {
 
@@ -27,20 +28,11 @@ const ItemDetail = ({productos}) => {
                     </Stack>
                 </CardBody>
                 <Divider />
-                <CardFooter>
-                    <ButtonGroup spacing='2'>
-                        <Link>
-                            <Button variant='solid' colorScheme='blue'>
-                                Contador
-                            </Button>
-                        </Link>
-                        
-                    </ButtonGroup>
-                </CardFooter>
             </Card>
           )
         })
       }
+      <ItemCount/>
     </>
   )
 }
